@@ -37,3 +37,7 @@ Route::post('products/store', [ProductController::class, 'store']);
 Route::post('products/update/{id}', [ProductController::class, 'update']);
 
 Route::post('products/destroy/{id}', [ProductController::class, 'destroy']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
