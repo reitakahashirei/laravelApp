@@ -1,3 +1,6 @@
+@extends('layouts.app')
+@component('components.header')
+@endcomponent
 @foreach($products as $product)
     {{$product->name}}
     {{$product->description}}
@@ -11,3 +14,5 @@
 @endforeach
 
 <a href="{{route('products.create')}}">New</a>
+@component('components.footer')
+@endcomponent
